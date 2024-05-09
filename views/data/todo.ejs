@@ -1,0 +1,35 @@
+<% layout("layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Add new Todo
+                </button>
+            </p>
+            <div class="collapse " id="collapseExample">
+                <div class="card card-body">
+                    <form action="/todo/add" method="post">
+                        <div class="todo_form">
+                        <input type="text" name="task" class="form-input" required>
+                        <button class="btn btn-success">Add</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row display">
+        <div class="offset-4 col-12 mt-5">
+
+            <% user_todos.forEach(task=> { %>
+                <p>
+                <form action="/todo/<%=task._id %>" method="post" style="display: inline;" class="myForm"><input type="checkbox" name="Status" class="formCheckbox" <%= task.status%>></form>
+                <%= task.Task %>
+                <form action="/todo/<%= task._id %>?_method=DELETE" method="post"style="display: inline;"><button class="btn trash-btn"><i class="fa-solid fa-trash" style="color: #dad5d5;"></i></button></form>
+                    </p>
+                    <% }) %>
+
+        </div>
+    </div>
+ 

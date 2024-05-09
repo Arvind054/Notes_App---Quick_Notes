@@ -1,0 +1,75 @@
+<nav class="navbar  mt-0 mb-0 ">
+    <div class="container-fluid mt-0">
+
+        <div class="heading">
+            <a href="/home"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></a>
+            <a href="/home" class="logo_name">QuickNotes</a>
+        </div>
+        <div class="main-icons">
+            <a href="/home" class="icon-link">
+                <i class="fa-solid fa-note-sticky" style="color: #fff;"></i></a>
+            <a href="/todo">
+                <i class="fa-solid fa-square-check" style="color: #fff;"></i></a>
+        </div>
+
+        <div class="user-icons">
+
+            <button class="btn  main-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"><i class="fa-solid fa-user" style="color: #ffffff;"></i></button>
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <div class="offcanvas-title mt-3" id="offcanvasScrollingLabel">
+                        <a href="/home"><i class="fa-regular fa-pen-to-square" style="color: #5904f7;"></i></a>
+                        <a href="/home" class="logo_name">QuickNotes</a>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="offcanvas-body">
+                    <div class="user">
+                        <% if (currentUser) { %>
+                            <div class="userExist ">
+                                <div class="userExistData">
+                                    <i class="fa-solid fa-circle-user" style="color: #B197FC;"></i>
+                                    <span>
+                                        <%= currentUser.username %>
+                                    </span>
+                                </div>
+                                <div>
+                                    <div class="already_user row">
+                                        <a href="/user/logout" class="mt-3 mb-3"><button
+                                                class="btn btn-danger">Logout</button></a>
+                                    </div>
+                                    <div class="social_links">
+                                        Follow Us:
+                                        
+                                        <a href="https://www.instagram.com/arvind_choudhary_054"
+                                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/arvind-choudhary-18a23728a/"
+                                            target="_blank"><i class="fa-brands fa-linkedin" style="color: #032e77;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% if (!currentUser) { %>
+
+
+                                    <div class="validate_user row">
+                                        <a href="/user/login" class="login mt-3 mb-3">already a user ? <button
+                                                class="btn btn-success">Login</button></a>
+                                        <i>or</i>
+                                        <a class="signup mt-3 mb-3" href="/user/signup">New User ? <button
+                                                class="btn btn-primary">signup</button></a>
+                                    </div>
+
+                                    <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<hr>

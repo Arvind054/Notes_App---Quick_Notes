@@ -1,0 +1,29 @@
+
+<% layout("layouts/boilerplate") %>
+
+    <div class="row col-4 offset-4"> 
+        <form action="/home" method="post">
+            <div class="mb-1 mt-3 offset">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="text" class="form-control " id="exampleFormControlInput1"
+                    placeholder="title here..." name="title">
+            </div>
+            <hr>
+            <div class="mb-1 mt-2 offset">
+                <%= new Intl.DateTimeFormat('en-IN', { year: 'numeric' , month: 'long' , day: '2-digit' ,
+                    hour:"numeric", minute:"numeric"}).format(new Date()) %>
+            </div>
+
+
+            <div class="mb  offset">
+                <label for="exampleFormControlTextarea1" class="form-label"></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="Add notes Here" name="note"></textarea>
+            </div>
+            <div class="mb-3 mt-1 offset-5">
+                <button class="btn btn-primary">Add note </button>
+            </div>
+        </form>
+
+    </div>
+   
