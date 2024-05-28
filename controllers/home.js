@@ -50,3 +50,10 @@ module.exports.error = (req,res)=>{
     res.render("data/error.ejs")
 }
     
+module.exports.noteDisplay = async(req, res)=>{
+    let{id}= req.params;
+    let Data = await Note.findById(id);
+    
+    res.render("data/noteDisplay.ejs", {Data});
+}
+

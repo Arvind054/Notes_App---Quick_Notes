@@ -16,12 +16,13 @@
         <div class=" row " id="display-notes">
         <% noteData.reverse().forEach(note=> { %>
             <div class="col-lg-4  col-md-6 col-sm-12 mb-5">
+                <a href="/home/note/<%= note._id %>" class="single-note-link">
                 <div class="mb-3 offset-3" id="single-note">
                     <h3>
                         <%= note.title %>
                     </h3>
                     <p>
-                        <%= note.note %>
+                        <%= note.note.slice(0,40)%>...
                     </p>
                     <form action="/home/<%= note._id %>/?_method=DELETE" method="post">
                         <i class="noteDate">
@@ -32,6 +33,7 @@
 
                     </form>
                 </div>
+            </a>
             </div>
             <% }) %>
     </div>
