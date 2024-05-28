@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoName = document.querySelector(".logo_name");
    
     function logoVisibility() {
-        if (window.innerWidth < 415) {
+        if (window.innerWidth < 450) {
             logoName.style.display = "none";
         }
         else {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     window.addEventListener("resize", logoVisibility)
-    if (window.innerWidth<415){
+    if (window.innerWidth<450){
         logoVisibility();
     }
 });
